@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="country_club.erd" time="201905142045">
+	<entities>
+		<data-source id="postgres-jdbc-16ab7a753db-7eb3342c5bda2e68">
+			<entity id="1" name="bookings" fq-name="cd.bookings" order="0" border-width="3" x="57" y="124">
+				<path name="cd"/>
+				<path name="exercises"/>
+			</entity>
+			<entity id="2" name="facilities" fq-name="cd.facilities" order="1" x="267" y="16">
+				<path name="cd"/>
+				<path name="exercises"/>
+			</entity>
+			<entity id="3" name="members" fq-name="cd.members" order="2" x="272" y="220">
+				<path name="cd"/>
+				<path name="exercises"/>
+			</entity>
+		</data-source>
+	</entities>
+	<notes/>
+	<relations>
+		<relation name="fk_bookings_facid" fq-name="cd.bookings.fk_bookings_facid" type="fk" pk-ref="2" fk-ref="1"/>
+		<relation name="fk_bookings_memid" fq-name="cd.bookings.fk_bookings_memid" type="fk" pk-ref="3" fk-ref="1"/>
+		<relation name="fk_members_recommendedby" fq-name="cd.members.fk_members_recommendedby" type="fk" pk-ref="3" fk-ref="3">
+			<bend type="rel" x="447" y="434"/>
+			<bend type="rel" x="342" y="488"/>
+		</relation>
+	</relations>
+</diagram>
